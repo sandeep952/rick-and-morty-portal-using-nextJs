@@ -1,6 +1,6 @@
 import React, { createContext, useReducer, useEffect } from "react";
 import episodeReducer from "../reducer/episodeReducer";
-import axios from 'axios'
+import axios from "axios";
 import {
   fetchEpisodeRequest,
   fetchEpisodeFailure,
@@ -33,11 +33,24 @@ const EpisodeContextProvider = (props) => {
         dispatch(fetchEpisodeFailure(error));
       });
   };
-
+  const searchEpisode = (episodeName) => {
+    dispatch(fetchEpisodeRequest);
+    axios
+      .get(`https://rickandmortyapi.com/api/episode?name=${episodeName}`)
+      .then((res) => {
+        dispatch(fetchEpisodeSuccess(res.data));
+      })
+      .catch((error) => {
+        console.log(error.response)
+        dispatch(fetchEpisodeFailure(error.response.data.error));
+      });
+  };
   return (
     <EpisodeContext.Provider
       value={{
         state,
+        searchEpisode,
+        getAllEpisodes,
       }}
     >
       {props.children}

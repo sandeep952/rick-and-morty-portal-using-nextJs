@@ -19,6 +19,7 @@ export const episodeReducer = (state,action)=>{
             }
         
         case actions.FETCH_EPISODE_FAILED:
+            console.log(action)
             return {
                 loading:false,
                 error:action.error,
