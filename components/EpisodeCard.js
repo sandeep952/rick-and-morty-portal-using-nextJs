@@ -15,7 +15,7 @@ const EpisodeCard = ({ episode }) => {
             <span>{episode.episode}</span>
           </p>
           <p className="card-footer-item">
-            <span>{episode.air_date}</span>
+            <span>{episode.air_data}</span>
           </p>
         </footer>
       </div>
