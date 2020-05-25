@@ -4,20 +4,15 @@ const EpisodeCard = ({ episode }) => {
   return (
     <div className="column is-6-tablet is-4-desktop is-3-widescreen">
       <div className="card">
-        <div className="card-content">
-          <p className="title">
-          {episode.name}
-          </p>
+        <div className="card-header">
+          <p className="card-header-title has-text-centered">{episode.name}</p>
         </div>
-
-        <footer className="card-footer">
-          <p className="card-footer-item">
-            <span>{episode.episode}</span>
-          </p>
-          <p className="card-footer-item">
-            <span>{episode.air_data}</span>
-          </p>
-        </footer>
+        <div className="card-content">
+          <div className="columns has-text-centered">
+            <div className="column ">{episode.episode}</div>
+            <div className="column">{episode.air_date}</div>
+          </div>
+        </div>
       </div>
     </div>
   );
