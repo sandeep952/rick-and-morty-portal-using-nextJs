@@ -1,9 +1,9 @@
-import React from "react";
-import Link from 'next/link'
+import React from 'react';
+import Link from 'next/link';
 const EpisodeCard = ({ episode }) => {
   return (
     <div className="column is-6-tablet is-4-desktop is-3-widescreen">
-      <Link href={`/episode/[id]`} as={`episode/${episode.id}`}>
+      <Link href={'/episode/[id]'} as={`episode/${episode.id}`}>
         <a>
           <div className="card">
             <div className="card-header">

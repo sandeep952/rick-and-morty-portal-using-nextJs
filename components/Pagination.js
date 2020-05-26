@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { EpisodeContext } from "../context/EpisodeContext";
+import React, { useContext } from 'react';
+import { EpisodeContext } from '../context/EpisodeContext';
 const Pagination = () => {
   const { state, changePage } = useContext(EpisodeContext);
   const { pages } = state;

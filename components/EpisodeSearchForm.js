@@ -1,10 +1,9 @@
-import React, { useState, useContext } from "react";
-import { EpisodeContext } from "../context/EpisodeContext";
+import React, { useState, useContext } from 'react';
+import { EpisodeContext } from '../context/EpisodeContext';
 
 const EpisodeSearchForm = () => {
-  const [searchString, setSearch] = useState("");
+  const [searchString, setSearch] = useState('');
   const { getAllEpisodes, searchEpisode } = useContext(EpisodeContext);
-
   const handleChange = (event) => {
     setSearch(event.target.value);
   };
@@ -12,11 +11,11 @@ const EpisodeSearchForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     searchEpisode(searchString);
-    setSearch("");
+    setSearch('');
   };
 
   const getAll = (event) => {
-    setSearch("");
+    setSearch('');
     getAllEpisodes();
     event.preventDefault();
   };

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import Link from "next/link";
+import React, { useState } from 'react';
+import Link from 'next/link';
 const Navbar = () => {
   const [active, toggleActive] = useState(false);
 
@@ -21,7 +21,7 @@ const Navbar = () => {
 
         <div
           role="button"
-          className={`navbar-burger burger ${active ? "is-active" : ""}`}
+          className={`navbar-burger burger ${active ? 'is-active' : ''}`}
           aria-label="menu"
           aria-expanded="false"
           data-target="navbarMenu"
@@ -35,7 +35,7 @@ const Navbar = () => {
 
       <div
         id="navbarMenu"
-        className={`navbar-menu ${active ? "is-active" : ""}`}
+        className={`navbar-menu ${active ? 'is-active' : ''}`}
       >
         <div className="navbar-end">
           <div className="navbar-item">

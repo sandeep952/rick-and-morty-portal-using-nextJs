@@ -1,8 +1,8 @@
-import React, { useEffect, useContext } from "react";
-import Axios from "axios";
-import { EpisodeContext } from "../context/EpisodeContext";
-import Loading from "./Loading";
-import Error from "./Error/Error";
+import React, { useEffect, useContext } from 'react';
+import Axios from 'axios';
+import { EpisodeContext } from '../context/EpisodeContext';
+import Loading from './Loading';
+import Error from './Error/Error';
 
 const EpisodeDetails = ({ id }) => {
   const { fetchEpisodeDetails, state } = useContext(EpisodeContext);
