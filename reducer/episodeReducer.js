@@ -43,7 +43,7 @@ export const episodeReducer = (state,action)=>{
                 episode:action.episode
             }
 
-        case actions.FETCH_EPISODE_FAILED:
+        case actions.FETCH_EPISODE_DETAILS_FAILED:
             return {
                 ...state,
                 loading:false,

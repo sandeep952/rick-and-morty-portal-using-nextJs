@@ -42,7 +42,7 @@ const EpisodeDetails = ({ id }) => {
       <div className="columns is-centered">
         <div className="column is-half">
           {loading && <Loading />}
-          {error && <Error />}
+          {error && <Error errorMessage={error}/>}
           {episode && <EpisodeDetailsCard {...episode} />}
         </div>
       </div>

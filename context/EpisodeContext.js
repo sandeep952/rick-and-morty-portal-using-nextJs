@@ -11,7 +11,7 @@ import {
 } from "../reducer/episodeActions";
 import { FETCH_EPISODE_FAILED } from "../reducer/episodeActionTypes";
 const initalState = {
-  episode:null,
+  episode: null,
   episodes: [],
   loading: false,
   error: "",
@@ -31,7 +31,6 @@ const EpisodeContextProvider = (props) => {
     axios
       .get("https://rickandmortyapi.com/api/episode")
       .then((res) => {
-        console.log(res.data);
         dispatch(fetchEpisodeSuccess(res.data));
       })
       .catch((error) => {
@@ -52,31 +51,29 @@ const EpisodeContextProvider = (props) => {
 
   const changePage = (pageNumber) => {
     dispatch(fetchEpisodeRequest);
-    axios.get(`https://rickandmortyapi.com/api/episode?page=${pageNumber}`)
+    axios
+      .get(`https://rickandmortyapi.com/api/episode?page=${pageNumber}`)
       .then((response) => {
-        dispatch(fetchEpisodeSuccess(response.data))
-        console.log(response.data.results)
+        dispatch(fetchEpisodeSuccess(response.data));
+        console.log(response.data.results);
       })
       .catch((error) => {
-        console.log(error)
+        console.log(error);
         error.response
           ? FETCH_EPISODE_FAILED(error.response.data.error)
           : FETCH_EPISODE_FAILED("Oops...something went wrong");
       });
   };
 
-  const fetchEpisodeDetails =  (id)=> {
+  const fetchEpisodeDetails = (id) => {
     dispatch(fetchEpisodeDetailsRequest());
-    console.log(`https://rickandmortyapi.com/api/episode/${id}`);
     axios
       .get(`https://rickandmortyapi.com/api/episode/${id}`)
       .then((res) => {
         dispatch(fetchEpisodeDetailsSuccess(res.data));
-        
       })
       .catch((error) => {
-        console.log(error)
-        //dispatch(fetchEpisodeDetailsFailure((error.response.data.error)));
+        dispatch(fetchEpisodeDetailsFailure(error.response.data.error));
       });
   };
   return (
@@ -86,7 +83,7 @@ const EpisodeContextProvider = (props) => {
         searchEpisode,
         getAllEpisodes,
         changePage,
-        fetchEpisodeDetails
+        fetchEpisodeDetails,
       }}
     >
       {props.children}
