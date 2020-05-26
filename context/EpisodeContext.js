@@ -5,9 +5,13 @@ import {
   fetchEpisodeRequest,
   fetchEpisodeFailure,
   fetchEpisodeSuccess,
+  fetchEpisodeDetailsRequest,
+  fetchEpisodeDetailsFailure,
+  fetchEpisodeDetailsSuccess,
 } from "../reducer/episodeActions";
 import { FETCH_EPISODE_FAILED } from "../reducer/episodeActionTypes";
 const initalState = {
+  episode:null,
   episodes: [],
   loading: false,
   error: "",
@@ -60,13 +64,29 @@ const EpisodeContextProvider = (props) => {
           : FETCH_EPISODE_FAILED("Oops...something went wrong");
       });
   };
+
+  const fetchEpisodeDetails =  (id)=> {
+    dispatch(fetchEpisodeDetailsRequest());
+    console.log(`https://rickandmortyapi.com/api/episode/${id}`);
+    axios
+      .get(`https://rickandmortyapi.com/api/episode/${id}`)
+      .then((res) => {
+        dispatch(fetchEpisodeDetailsSuccess(res.data));
+        
+      })
+      .catch((error) => {
+        console.log(error)
+        //dispatch(fetchEpisodeDetailsFailure((error.response.data.error)));
+      });
+  };
   return (
     <EpisodeContext.Provider
       value={{
         state,
         searchEpisode,
         getAllEpisodes,
-        changePage
+        changePage,
+        fetchEpisodeDetails
       }}
     >
       {props.children}
