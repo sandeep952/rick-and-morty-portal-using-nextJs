@@ -1,5 +1,4 @@
 import React, { useEffect, useContext } from 'react';
-import Axios from 'axios';
 import { EpisodeContext } from '../context/EpisodeContext';
 import Loading from './Loading';
 import Error from './Error/Error';

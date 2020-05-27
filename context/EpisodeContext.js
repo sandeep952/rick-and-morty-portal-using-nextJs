@@ -1,6 +1,6 @@
-import React, { createContext, useReducer, useEffect } from "react";
-import episodeReducer from "../reducer/episodeReducer";
-import axios from "axios";
+import React, { createContext, useReducer, useEffect } from 'react';
+import episodeReducer from '../reducer/episodeReducer';
+import axios from 'axios';
 import {
   fetchEpisodeRequest,
   fetchEpisodeFailure,
@@ -8,13 +8,13 @@ import {
   fetchEpisodeDetailsRequest,
   fetchEpisodeDetailsFailure,
   fetchEpisodeDetailsSuccess,
-} from "../reducer/episodeActions";
-import { FETCH_EPISODE_FAILED } from "../reducer/episodeActionTypes";
+} from '../reducer/episodeActions';
+import { FETCH_EPISODE_FAILED } from '../reducer/episodeActionTypes';
 const initalState = {
   episode: null,
   episodes: [],
   loading: false,
-  error: "",
+  error: '',
   pages: 0,
 };
 export const EpisodeContext = createContext(initalState);
@@ -29,7 +29,7 @@ const EpisodeContextProvider = (props) => {
   const getAllEpisodes = () => {
     dispatch(fetchEpisodeRequest());
     axios
-      .get("https://rickandmortyapi.com/api/episode")
+      .get('https://rickandmortyapi.com/api/episode')
       .then((res) => {
         dispatch(fetchEpisodeSuccess(res.data));
       })
@@ -61,7 +61,7 @@ const EpisodeContextProvider = (props) => {
         console.log(error);
         error.response
           ? FETCH_EPISODE_FAILED(error.response.data.error)
-          : FETCH_EPISODE_FAILED("Oops...something went wrong");
+          : FETCH_EPISODE_FAILED('Oops...something went wrong');
       });
   };
 

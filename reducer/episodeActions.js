@@ -1,4 +1,4 @@
-import * as actions from "./episodeActionTypes";
+import * as actions from './episodeActionTypes';
 
 export const fetchEpisodeSuccess = (data) => {
   return {
