@@ -11,7 +11,6 @@ const EpisodeSearchForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     searchEpisode(searchString);
-    setSearch('');
   };
 
   const getAll = (event) => {
