@@ -8,7 +8,7 @@ const Episode = (props) => {
   return (
     <Layout className="title">
       {props.episode ? (
-        <EpisodeDetails episode={props.episode} />
+        <EpisodeDetails episode={props.episode} characters={props.characters} />
       ) : (
         <Error errorMessage={props.error} />
       )}
@@ -21,8 +21,14 @@ Episode.getInitialProps = async (context) => {
   const { id } = context.query;
   try {
     const res = await axios.get(`https://rickandmortyapi.com/api/episode/${id}`);
+    const characterUrls = res.data.characters;
+    const charactersResponse = await axios.all(
+      characterUrls.map((url) => axios.get(url))
+    );
+    const characters = charactersResponse.map((character) => character.data);
     return {
       episode: res.data,
+      characters,
     };
   } catch (error) {
     return {

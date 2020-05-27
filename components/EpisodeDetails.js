@@ -1,37 +1,28 @@
 import React from 'react';
+import Character from './Character';
 
-const EpisodeDetails = ({ episode }) => {
-  const EpisodeDetailsCard = () => {
-    return (
-      <div className="card has-text-centered">
-        <div className="title">{episode.name}</div>
-
-        <div className="card-content">
-          <div className="columns">
-            <div className="column">
-              <span className="tag is-black ">Air date</span>
-            </div>
-            <div className="column">
-              <span>{episode.air_date}</span>
-            </div>
-          </div>
-          <div className="columns">
-            <div className="column">
-              <span className="tag is-black ">Episode</span>
-            </div>
-            <div className="column">
-              <span>{episode.episode}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  };
+const EpisodeDetails = ({ episode, characters }) => {
   return (
     <section className="section">
-      <div className="columns is-centered">
-        <div className="column is-half">
-          <EpisodeDetailsCard />
+      <div className="container has-text-centered">
+        <div className="title is-1">{episode.name}</div>
+        <hr />
+        <div className="columns">
+          <div className="column">
+            <p className="subtitle tag is-black is-4">Air date</p>
+            <p className="is-size-5">{episode.air_date}</p>
+          </div>
+          <div className="column">
+            <p className="subtitle tag is-black is-4">Episode</p>
+            <p className="is-size-5">{episode.episode}</p>
+          </div>
+        </div>
+
+        <p className="title is-2">Characters</p>
+        <div className="columns is-multiline">
+          {characters.map((character) => (
+            <Character key={character.id} character={character} />
+          ))}
         </div>
       </div>
     </section>
