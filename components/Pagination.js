@@ -11,7 +11,7 @@ const Pagination = () => {
     <nav className="pagination" role="navigation">
       <ul className="pagination-list">
         {pageArray.map((page) => (
-          <li key={page} onClick={()=>changePage(page)}>
+          <li key={page} onClick={() => changePage(page)}>
             <a className="pagination-link">{page}</a>
           </li>
         ))}

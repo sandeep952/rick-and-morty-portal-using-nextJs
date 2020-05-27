@@ -4,16 +4,14 @@ import EpisodeList from '../components/EpisoideList';
 import EpisodeSearchForm from '../components/EpisodeSearchForm';
 import Pagination from '../components/Pagination';
 
-
 export default function Home() {
-  
   return (
     <div className="container">
       <EpisodeContextProvider>
         <Layout>
           <EpisodeSearchForm />
           <EpisodeList />
-          <Pagination/>
+          <Pagination />
         </Layout>
       </EpisodeContextProvider>
     </div>

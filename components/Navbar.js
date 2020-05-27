@@ -7,11 +7,7 @@ const Navbar = () => {
     toggleActive(!active);
   };
   return (
-    <nav
-      className="navbar is-light"
-      role="navigation"
-      aria-label="main navigation"
-    >
+    <nav className="navbar is-light" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <div className="navbar-item">
           <Link href="/">
@@ -33,10 +29,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div
-        id="navbarMenu"
-        className={`navbar-menu ${active ? 'is-active' : ''}`}
-      >
+      <div id="navbarMenu" className={`navbar-menu ${active ? 'is-active' : ''}`}>
         <div className="navbar-end">
           <div className="navbar-item">
             <Link href="/">

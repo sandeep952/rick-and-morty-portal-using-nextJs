@@ -40,11 +40,7 @@ const EpisodeSearchForm = () => {
 
         <div className="column ">
           <div className="buttons">
-            <button
-              type="submit"
-              className="button is-info "
-              onClick={handleSubmit}
-            >
+            <button type="submit" className="button is-info " onClick={handleSubmit}>
               Search
             </button>
 

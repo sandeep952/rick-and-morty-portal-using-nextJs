@@ -7,9 +7,7 @@ const EpisodeCard = ({ episode }) => {
         <a>
           <div className="card">
             <div className="card-header">
-              <p className="card-header-title has-text-centered">
-                {episode.name}
-              </p>
+              <p className="card-header-title has-text-centered">{episode.name}</p>
             </div>
             <div className="card-content">
               <div className="columns has-text-centered">
