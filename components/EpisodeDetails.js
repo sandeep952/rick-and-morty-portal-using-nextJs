@@ -1,16 +1,7 @@
-import React, { useEffect, useContext } from 'react';
-import { EpisodeContext } from '../context/EpisodeContext';
-import Loading from './Loading';
-import Error from './Error/Error';
+import React from 'react';
 
-const EpisodeDetails = ({ id }) => {
-  const { fetchEpisodeDetails, state } = useContext(EpisodeContext);
-  const { episode, loading, error } = state;
-  useEffect(() => {
-    fetchEpisodeDetails(id);
-  }, []);
-
-  const EpisodeDetailsCard = (episode) => {
+const EpisodeDetails = ({ episode }) => {
+  const EpisodeDetailsCard = () => {
     return (
       <div className="card has-text-centered">
         <div className="title">{episode.name}</div>
@@ -40,9 +31,7 @@ const EpisodeDetails = ({ id }) => {
     <section className="section">
       <div className="columns is-centered">
         <div className="column is-half">
-          {loading && <Loading />}
-          {error && <Error errorMessage={error} />}
-          {episode && <EpisodeDetailsCard {...episode} />}
+          <EpisodeDetailsCard />
         </div>
       </div>
     </section>

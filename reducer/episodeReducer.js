@@ -28,28 +28,6 @@ export const episodeReducer = (state, action) => {
         episodes: [],
         pages: 0,
       };
-    case actions.FETCH_EPISODE_DETAILS_REQUEST:
-      return {
-        ...state,
-        episode: null,
-        loading: true,
-        error: '',
-      };
-    case actions.FETCH_EPISODE_DETAILS_SUCCESS:
-      return {
-        ...state,
-        loading: false,
-        error: '',
-        episode: action.episode,
-      };
-
-    case actions.FETCH_EPISODE_DETAILS_FAILED:
-      return {
-        ...state,
-        loading: false,
-        error: action.error,
-        episode: null,
-      };
 
     default:
       return state;

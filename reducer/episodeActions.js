@@ -20,25 +20,3 @@ export const fetchEpisodeRequest = () => {
     type: actions.FETCH_EPISODE_REQUEST,
   };
 };
-
-//episode details actions
-
-export const fetchEpisodeDetailsSuccess = (episodeDetails) => {
-  return {
-    type: actions.FETCH_EPISODE_DETAILS_SUCCESS,
-    episode: episodeDetails,
-  };
-};
-
-export const fetchEpisodeDetailsFailure = (errorMessage) => {
-  return {
-    type: actions.FETCH_EPISODE_DETAILS_FAILED,
-    error: errorMessage,
-  };
-};
-
-export const fetchEpisodeDetailsRequest = () => {
-  return {
-    type: actions.FETCH_EPISODE_DETAILS_REQUEST,
-  };
-};
