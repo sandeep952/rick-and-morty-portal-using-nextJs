@@ -4,15 +4,13 @@ import Head from 'next/head';
 
 const Layout = (props) => {
   return (
-    <div className="container">
+    <React.Fragment>
       <Head>
         <title>Rick And Morty</title>
       </Head>
-      <main>
-        <Navbar />
-        {props.children}
-      </main>
-    </div>
+      <Navbar />
+      <div className="container">{props.children}</div>
+    </React.Fragment>
   );
 };
 export default Layout;
