@@ -6,8 +6,8 @@ const EpisodeCard = ({ episode }) => {
       <Link href={'/episode/[id]'} as={`episode/${episode.id}`}>
         <a>
           <div className="card">
-            <div className="card-header">
-              <p className="card-header-title has-text-centered">{episode.name}</p>
+            <div className="card-header has-text-centered">
+              <p className="card-header-title">{episode.name}</p>
             </div>
             <div className="card-content">
               <div className="columns has-text-centered">
