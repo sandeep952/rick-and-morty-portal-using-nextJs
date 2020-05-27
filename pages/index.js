@@ -17,3 +17,13 @@ export default function Home() {
     </div>
   );
 }
+
+// <div>
+// <EpisodeContextProvider>
+//   <Layout>
+//     <EpisodeSearchForm />
+//     <EpisodeList />
+//     <Pagination />
+//   </Layout>
+// </EpisodeContextProvider>
+// </div>

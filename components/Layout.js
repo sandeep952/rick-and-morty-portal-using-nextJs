@@ -4,14 +4,14 @@ import Head from 'next/head';
 
 const Layout = (props) => {
   return (
-    <React.Fragment>
+    <div>
       <Head>
         <title>Rick And Morty</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
       </Head>
+
       <Navbar />
       <div className="container">{props.children}</div>
-    </React.Fragment>
+    </div>
   );
 };
 export default Layout;
