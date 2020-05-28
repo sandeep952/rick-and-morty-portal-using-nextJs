@@ -6,15 +6,13 @@ import Pagination from '../components/Pagination';
 
 export default function Home() {
   return (
-    <div>
-      <EpisodeContextProvider>
-        <Layout>
-          <EpisodeSearchForm />
-          <EpisodeList />
-          <Pagination />
-        </Layout>
-      </EpisodeContextProvider>
-    </div>
+    <EpisodeContextProvider>
+      <Layout>
+        <EpisodeSearchForm />
+        <EpisodeList />
+        <Pagination />
+      </Layout>
+    </EpisodeContextProvider>
   );
 }
 
