@@ -10,6 +10,9 @@ const EpisodeList = () => {
     <section className="block">
       {loading && <Loading />}
       {error && <Error errorMessage={error} />}
+      {!error && filteredEpisodes.length === 0 && (
+        <Error errorMessage="Nothing to show." />
+      )}
       <div className="columns is-multiline">
         {filteredEpisodes.map((episode) => (
           <EpisodeCard key={episode.id} episode={episode} />
