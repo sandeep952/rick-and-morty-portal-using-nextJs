@@ -9,9 +9,6 @@ const Filter = () => {
 
   const { setFilterDates } = useContext(EpisodeContext);
 
-  function OverlayComponent({ children, ...props }) {
-    return <div {...props}>{children}</div>;
-  }
   const setDate = (name, date) => {
     console.log(name);
     console.log(date);
@@ -32,7 +29,6 @@ const Filter = () => {
       <div className="columns ">
         <div className="column is-4">
           <DayPickerInput
-            overlayComponent={OverlayComponent}
             value={dates.from}
             dayPickerProps={{
               disabledDays: [{ after: dates.to }, { daysOfWeek: [2] }],
@@ -44,7 +40,6 @@ const Filter = () => {
 
         <div className="column is-4">
           <DayPickerInput
-            overlayComponent={OverlayComponent}
             dayPickerProps={{
               disabledDays: [{ before: dates.from }, { daysOfWeek: [2] }],
               todayButton: 'Go to Today',

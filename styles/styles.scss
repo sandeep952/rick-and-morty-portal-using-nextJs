@@ -12,6 +12,10 @@ $dark: black;
   overflow: hidden;
 }
 
+.DayPicker{
+  z-index: 99;
+}
+
 .DayPickerInput input{
     padding:10px;
     font-size: medium;
