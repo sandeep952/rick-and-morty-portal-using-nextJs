@@ -13,7 +13,11 @@ $dark: black;
 }
 
 .DayPicker{
-  z-index: 99;
+  z-index: 100;
+  position: fixed;
+  background: white;
+  box-shadow: 5px 10px 8px #888888;
+
 }
 
 .DayPickerInput input{
