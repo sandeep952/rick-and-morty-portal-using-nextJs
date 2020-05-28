@@ -1,15 +1,15 @@
-@import "bulma/sass/utilities/initial-variables";
-@import "bulma/sass/utilities/functions";
-$light:gray;
-$dark:black;
+@import 'bulma/sass/utilities/initial-variables';
+@import 'bulma/sass/utilities/functions';
+$light: gray;
+$dark: black;
 
-.card{
-    height:100%;
-    margin:0 5%;
+.card {
+  height: 100%;
+  margin: 0 5%;
 }
 
-.container{
-    overflow: hidden;
+.container {
+  overflow: hidden;
 }
 
-@import "bulma";
+@import 'bulma';
