@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { EpisodeContext } from '../context/EpisodeContext';
+import Filter from './Filter';
 
 const EpisodeSearchForm = () => {
   const [searchString, setSearch] = useState('');
@@ -49,6 +50,7 @@ const EpisodeSearchForm = () => {
           </div>
         </div>
       </div>
+      <Filter />
     </form>
   );
 };

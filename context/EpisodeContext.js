@@ -5,6 +5,8 @@ import {
   fetchEpisodeRequest,
   fetchEpisodeFailure,
   fetchEpisodeSuccess,
+  filterEpisodes,
+  setDateFilter,
 } from '../reducer/episodeActions';
 import { FETCH_EPISODE_FAILED } from '../reducer/episodeActionTypes';
 const initalState = {
@@ -12,6 +14,11 @@ const initalState = {
   loading: false,
   error: '',
   pages: 0,
+  airDateFilter: {
+    from: '',
+    to: '',
+  },
+  filteredEpisodes: [],
 };
 export const EpisodeContext = createContext(initalState);
 
@@ -21,6 +28,10 @@ const EpisodeContextProvider = (props) => {
   useEffect(() => {
     getAllEpisodes();
   }, []);
+
+  useEffect(() => {
+    filter_episodes();
+  }, [state.episodes, state.airDateFilter]);
 
   const getAllEpisodes = () => {
     dispatch(fetchEpisodeRequest());
@@ -61,6 +72,19 @@ const EpisodeContextProvider = (props) => {
       });
   };
 
+  const filter_episodes = () => {
+    const filterDates = state.airDateFilter;
+    const filteredEpisodes = state.episodes.filter((episode) => {
+      const episodeDate = Date.parse(episode.air_date);
+      return episodeDate >= filterDates.from && episodeDate <= filterDates.to;
+    });
+    dispatch(filterEpisodes(filteredEpisodes));
+  };
+
+  const setFilterDates = (filterDates) => {
+    dispatch(setDateFilter(filterDates));
+  };
+
   return (
     <EpisodeContext.Provider
       value={{
@@ -68,6 +92,7 @@ const EpisodeContextProvider = (props) => {
         searchEpisode,
         getAllEpisodes,
         changePage,
+        setFilterDates,
       }}
     >
       {props.children}

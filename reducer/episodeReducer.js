@@ -29,6 +29,17 @@ export const episodeReducer = (state, action) => {
         pages: 0,
       };
 
+    case actions.FILTER_EPISODES:
+      return {
+        ...state,
+        filteredEpisodes: action.filteredEpisodes,
+      };
+
+    case actions.SET_DATE_FILTER:
+      return {
+        ...state,
+        airDateFilter: action.airDateFilter,
+      };
     default:
       return state;
   }

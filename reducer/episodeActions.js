@@ -20,3 +20,17 @@ export const fetchEpisodeRequest = () => {
     type: actions.FETCH_EPISODE_REQUEST,
   };
 };
+
+export const filterEpisodes = (filteredEpisodes) => {
+  return {
+    type: actions.FILTER_EPISODES,
+    filteredEpisodes,
+  };
+};
+
+export const setDateFilter = (filterDates) => {
+  return {
+    type: actions.SET_DATE_FILTER,
+    airDateFilter: filterDates,
+  };
+};
