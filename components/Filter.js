@@ -34,6 +34,7 @@ const Filter = () => {
               disabledDays: [{ after: dates.to }, { daysOfWeek: [2] }],
               todayButton: 'Go to Today',
             }}
+            inputProps={{ readOnly: true }}
             onDayChange={(date) => setDate('from', date)}
           />
         </div>
@@ -44,6 +45,7 @@ const Filter = () => {
               disabledDays: [{ before: dates.from }, { daysOfWeek: [2] }],
               todayButton: 'Go to Today',
             }}
+            inputProps={{ readOnly: true }}
             value={dates.to}
             onDayChange={(date) => setDate('to', date)}
           />
