@@ -12,4 +12,8 @@ $dark: black;
   overflow: hidden;
 }
 
+.DayPickerInput input{
+    padding:10px;
+    font-size: medium;
+}
 @import 'bulma';
